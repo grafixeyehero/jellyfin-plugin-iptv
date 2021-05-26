@@ -1,0 +1,50 @@
+<div id="IPTVConfigurationPage" data-role="page" class="page type-interior pluginConfigurationPage" data-controller="__plugin/iptvjs">
+    <div data-role="content">
+        <div class="content-primary">
+            <div class="readOnlyContent">
+                <div style="display: flex; align-items: center;margin: 1em 0;">
+                    <h1 style="margin:0;">IPTV Streams</h1>
+                    <button is="emby-button" type="button" class="raised btnAdd submit mini" style="margin-left:1em;" title="Add">
+                        <span class="material-icons add"></span>
+                    </button>
+                </div>
+                <div class="streamList paperList">
+                </div>
+            </div>
+        </div>
+        <div data-role="popup" id="streamPopup" class="dialog dialog-fixedSize dialog-medium-tall hide" style="position: fixed; top: 10%;">
+            <form id="streamForm" style="padding:1em;">
+                <div class="ui-bar-a" style="text-align: center; padding: 0 20px;">
+                    <h3>New IPTV Stream</h3>
+                </div>
+                <div data-role="content">
+                    <div class="inputContainer">
+                        <input is="emby-input" type="text" id="Name" label="Name" />
+                    </div>
+                    <div class="inputContainer">
+                        <input is="emby-input" type="url" id="URL" label="Url:" />
+                    </div>
+                    <div class="inputContainer">
+                        <input is="emby-input" type="text" id="Image" label="Image url:" />
+                    </div>
+                    <div class="selectContainer">
+                        <select id="Type" name="Type" is="emby-select" label="Protocol:">
+                            <option value="Http">Http</option>
+                            <option value="File">File</option>
+                            <option value="Rtmp">Rtmp</option>
+                            <option value="Rtsp">Rtsp</option>
+                        </select>
+                    </div>
+                    <p>
+                        <button is="emby-button" type="submit" class="raised button-submit block">
+                            <span>Add</span>
+                        </button>
+                        <button is="emby-button" type="button" class="raised button-cancel block">
+                            <span>${ButtonCancel}</span>
+                        </button>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

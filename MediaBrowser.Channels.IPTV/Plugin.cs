@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using MediaBrowser.Channels.IPTV.Configuration;
 using MediaBrowser.Common.Configuration;
 using MediaBrowser.Common.Plugins;
 using MediaBrowser.Model.Plugins;
 using MediaBrowser.Model.Serialization;
-using MediaBrowser.Model.Drawing;
-using Microsoft.Extensions.Logging;
 
 namespace MediaBrowser.Channels.IPTV
 {
@@ -52,7 +49,12 @@ namespace MediaBrowser.Channels.IPTV
                 new PluginPageInfo
                 {
                     Name = "iptv",
-                    EmbeddedResourcePath = GetType().Namespace + ".Configuration.configPage.html"
+                    EmbeddedResourcePath = GetType().Namespace + ".Web.iptv.html",
+                },
+                new PluginPageInfo
+                {
+                    Name = "iptvjs",
+                    EmbeddedResourcePath = GetType().Namespace + ".Web.iptv.js"
                 }
             };
         }
